@@ -1,5 +1,4 @@
-// Importa todo lo que se esté exportando desde el archivo interfaz, y todo tendrá el alias UI...por lo tanto podremos usar
-// UI.formularioBuscar o UI.divBuscar, etc...
+
 import * as UI from './interfaz.js';
 import API from './api.js';
 
@@ -8,7 +7,6 @@ UI.formularioBuscar.addEventListener('submit', buscarCancion);
 function buscarCancion(e) {
     e.preventDefault();
 
-    // Obtener datos del formulario
     const artista = document.querySelector('#artista').value;
     const cancion = document.querySelector('#cancion').value;
 
@@ -23,8 +21,7 @@ function buscarCancion(e) {
 
         return;
     }
-
-    // Consultar nuestra API
+    
     const busqueda = new API(artista, cancion);
     busqueda.consultarApi();
 }
